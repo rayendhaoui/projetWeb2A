@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire de Réclamation</title>
+    <link rel="stylesheet" href="list.css">
+    <link rel="stylesheet" href="inscr.css">
+
+    
+
+</head>
+<body>
+    <div id="dashboard">
+        <h1>Dashboard</h1>
+        <ul>
+            <li><a href="inscri.html">  Add reclamation</a></li>
+            <li><a href="list.php"> List reclamation</a></li>
+            <li><a href="list.php">Update</a></li>
+        </ul>
+    </div>
+    <div class="container">
+        <h2>Formulaire de Réclamation</h2>
+        <form action="./treatment.php" method="post" onsubmit="return controller()">
+            <label for="id">Identifiant :</label>
+            <input type="text" id="id" name="id" placeholder="Entrez votre identifiant" required>
+
+            <label for="nom">Nom :</label>
+            <input type="text" id="nom" name="nom" placeholder="Entrez votre nom" required>
+    
+            <label for="prenom">Prénom :</label>
+            <input type="text" id="prenom" name="prenom" placeholder="Entrez votre prénom" required>
+    
+            <label for="email">Email :</label>
+            <input type="email" id="email" name="email" placeholder="Entrez votre email" required>
+            <label for="sujet">sujet :</label>
+            <textarea id="sujet" name="sujet" placeholder="Entrez Le sujet de la réclamation" required style="height: 70px;"></textarea>
+            
+            <label for="description">Description :</label>
+<textarea id="description" name="description" placeholder="Entrez la description de la réclamation" required style="height: 150px;"></textarea>
+            
+           
+            <label for="idUtilisateur">Identifiant de l'utilisateur :</label>
+            <input type="text" id="idUtilisateur" name="idUtilisateur" placeholder="Entrez l'identifiant de l'utilisateur" required>
+            
+            <input type="submit" value="Soumettre la Réclamation">
+        </form>
+        
+        <script>
+            function controller() {
+                var id = document.getElementById("id").value;
+                var sujet = document.getElementById("sujet").value;
+                var description = document.getElementById("description").value;
+                var idUtilisateur = document.getElementById("idUtilisateur").value;
+
+                if (id === "0") {
+                    alert("L'identifiant doit être supérieur à 0");
+                    return false; 
+                }
+                
+                if (sujet === "") {
+            alert("Veuillez entrer un sujet.");
+            return false; 
+        } else if (sujet.length <= 5) {
+            alert("Le sujet doit contenir plus de 5 caractères.");
+            return false; 
+        }
+
+        if (description === "") {
+            alert("Veuillez entrer une description.");
+            return false; // Empêche l'envoi du formulaire
+        } else if (description.length < 30) {
+            alert("La description doit contenir au moins 30 caractères.");
+            return false; // Empêche l'envoi du formulaire
+        }
+        if (idUtilisateur === "") {
+            alert("Veuillez entrer un identifiant d'utilisateur.");
+            return false; 
+        } else if (isNaN(idUtilisateur) || idUtilisateur <= 0) {
+            alert("L'identifiant de l'utilisateur doit être un nombre supérieur à zéro.");
+            return false; 
+        }
+
+
+
+                return true; 
+            }
+        </script>
+    </div>
+</body>
+</html>

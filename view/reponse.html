@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire de Réponse</title>
+    <link rel="stylesheet" href="reponse.css"> <!-- Assurez-vous de remplacer "reponse.css" par le nom de votre fichier CSS -->
+</head>
+<body>
+    <div id="dashboard">
+        <h1>Dashboard</h1>
+        <ul>
+        <li><a href="reponse.html">Ajouter une réponse</a></li> <!-- Lien vers la page pour ajouter une réponse -->
+        <li>            <li><a href="list_rep.php">List Responses</a></li> <!-- Lien vers la page pour afficher la liste des réponses -->    </li>
+        </ul>
+
+
+    </div>
+    <div class="container">
+        <h2>Formulaire de Réponse</h2>
+        <form action="./reponse.php" method="post" onsubmit="return validateResponse()">
+            <label for="id_rep">Identifiant de la réponse :</label>
+            <input type="text" id="id_rep" name="id_rep" placeholder="Entrez l'identifiant de la réponse" required>
+
+            <label for="reclaimID">Identifiant de la réclamation :</label>
+            <input type="text" id="reclaimID" name="reclaimID" placeholder="Entrez l'identifiant de la réclamation" required>
+
+            <label for="message">Message :</label>
+            <textarea id="message" name="message" placeholder="Entrez votre réponse" required style="height: 150px;"></textarea>
+
+            <label for="date">Date :</label>
+            <input type="date" id="date" name="date" required>
+            
+            <input type="submit" value="Soumettre la Réponse">
+        </form>
+        
+        <script>
+            function validateResponse() {
+                var id = document.getElementById("id_rep").value;
+                var reclaimID = document.getElementById("reclaimID").value;
+                var message = document.getElementById("message").value;
+                var date = document.getElementById("date").value;
+
+                if (id_rep == "") {
+                    alert("Veuillez entrer l'identifiant de la réponse.");
+                    return false; 
+                }
+
+                if (reclaimID === "") {
+                    alert("Veuillez entrer l'identifiant de la réclamation.");
+                    return false; 
+                }
+
+                if (message === "") {
+                    alert("Veuillez entrer un message.");
+                    return false; 
+                }
+
+                if (date === "") {
+                    alert("Veuillez choisir une date.");
+                    return false; 
+                }
+
+                return true; 
+            }
+        </script>
+    </div>
+</body>
+</html>

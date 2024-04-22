@@ -1,0 +1,120 @@
+#dashboard {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 150px;
+    height: 100%;
+    background-color: #1d2d44; /* Royal Blue dashboard color */
+    color: #f0ebd8; /* White text color */
+    padding: 20px;
+}
+
+#dashboard h1 {
+    margin-top: 0;
+}
+
+#dashboard ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#dashboard ul li {
+    margin-bottom: 50px; /* Espace entre chaque élément */
+font-family: Arial, Helvetica, sans-serif;}
+
+#dashboard ul li:last-child {
+    border-bottom: none; /* Supprimer la ligne en dessous du dernier élément */
+}
+
+#dashboard ul li a {
+    color: #fff; /* White link color */
+    text-decoration: none;
+}
+#dashboard ul li + li {
+    margin-top: 10px; /* ou toute autre valeur souhaitée pour l'espace */
+}
+.description-cell {
+    width: 80%; /* ou toute autre valeur appropriée */
+}
+/* Conteneur du formulaire */
+.container {
+    max-width: 400px; /* Limiter la largeur du conteneur pour une meilleure lisibilité */
+    margin: 0 auto; /* Centrer le conteneur horizontalement */
+    padding: 20px; /* Ajouter un peu d'espacement intérieur */
+    background-color: #f0ebd8; /* Définir la couleur de fond du conteneur */
+    border-radius: 8px; /* Ajouter des coins arrondis */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ajouter une ombre légère */
+}
+
+/* Titre du formulaire */
+h2 {
+    color: #333; /* Couleur du texte pour les titres */
+    text-align: center; /* Centrer le titre */
+}
+
+/* Étiquettes des champs de saisie */
+label {
+    display: block; /* Afficher les étiquettes sur une nouvelle ligne */
+    margin-bottom: 10px; /* Ajouter un peu d'espacement en bas des étiquettes */
+}
+
+/* Champs de saisie */
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%; /* Définir la largeur des champs de saisie à 100% */
+    padding: 8px; /* Ajouter un peu de rembourrage à l'intérieur des champs de saisie */
+    margin-bottom: 15px; /* Ajouter un peu d'espacement en bas des champs de saisie */
+    border: 1px solid #f0ebd8; /* Ajouter une bordure légère autour des champs de saisie */
+    border-radius: 4px; /* Ajouter des coins arrondis aux champs de saisie */
+}
+
+
+
+table {
+    table-layout: fixed;
+    width: 70%;
+    border-collapse: collapse;
+    border: 3px solid #1d2d44;
+    background-color: #f0ebd8;
+    margin-left: calc(200px + 100px); /* 200px (largeur du dashboard) + 10px d'espacement */
+    margin-right: 0%; /* Aucun espace sur le côté droit */
+
+  }
+  
+  thead th:nth-child(1) {
+    width: 30%;
+  }
+  
+  thead th:nth-child(2) {
+    width: 20%;
+  }
+  
+  thead th:nth-child(3) {
+    width: 15%;
+  }
+  
+  thead th:nth-child(4) {
+    width: 35%;
+  }
+  
+  th,
+  td {
+    padding: 0px;
+  }
+
+
+
+  input[type="submit"] {
+    width: 100%; /* Définir la largeur du bouton à 100% */
+    padding: 1px; /* Ajouter un peu de rembourrage au bouton */
+    background-color: #0d1321; /* Définir la couleur de fond du bouton */
+    color: #f0ebd8; /* Couleur du texte du bouton */
+    border: none; /* Supprimer la bordure du bouton */
+    border-radius: 4px; /* Ajouter des coins arrondis au bouton */
+    cursor: pointer; /* Définir le curseur de la souris sur pointer pour les boutons */
+}
+
+input[type="submit"]:hover {
+    background-color: #748cab; /* Change la couleur de fond du bouton au survol */
+}
