@@ -18,6 +18,23 @@ class serviceS
         }
     }
 
+    public function affich($nom)
+    {
+        $sql = "SELECT * FROM service WHERE nom = :nom";
+        $db = config::getConnexion();
+        $query = $db->prepare($sql);
+        $query->bindValue(':nom', $nom);
+
+        try {
+            $liste = $query->fetch();
+            var_dump($liste);
+            return $liste;
+        } catch (Exception $e) {
+            die('Error:' . $e->getMessage());
+        }
+    }
+
+
     function delete($nom)
     {
         $sql = "DELETE FROM service WHERE nom = :nom";
@@ -34,8 +51,9 @@ class serviceS
 
     function create($service)
     {
+        
         $sql = "INSERT INTO service  
-        VALUES (:nom, :prix,:typee,:mode)";
+        VALUES (:nom, :prix, :id, :typee ,:mode)";
         $db = config::getConnexion();
         
             $query = $db->prepare($sql);
@@ -43,6 +61,7 @@ class serviceS
                 'nom' => $service->getnom(),
                 'prix' => $service->getprix(),
                 'typee' => $service->gettypee(),
+                'id' => $service->getid(),
                 'mode' => $service->getmode(),
             ]);
         
@@ -56,6 +75,7 @@ class serviceS
                 'UPDATE service 
                 SET prix = :prix, 
                     typee = :typee, 
+                    id = :id,
                     mode = :mode 
                 WHERE nom = :nom'
             );
@@ -65,6 +85,7 @@ class serviceS
                 'nom' => $service->getNom(), // Corrected here
                 'prix' => $service->getPrix(),
                 'typee' => $service->getTypee(),
+                'id' => $service->getId(),
                 'mode' => $service->getMode(),
             ]);
             
@@ -74,6 +95,36 @@ class serviceS
         }
     }
 }
+
+ function chercheridparPrest($id) {
+    try {
+        $db = config::getConnexion();
+
+        // Prepare the SQL statement with proper JOIN and condition
+        $query = $db->prepare("
+            SELECT  p.niveau
+            FROM prestataire p
+            JOIN service s  ON s.id = p.id
+            WHERE p.id = :id
+        ");
+
+        // Execute the query with parameterized input to prevent SQL injection
+        $query->execute(array(':id' => $id));
+        
+        // Fetch results as associative array if records are found
+        if ($query->rowCount() > 0) {
+            $results = $query->fetchAll(PDO::FETCH_ASSOC);
+            return $results; // Return the fetched data
+        } else {
+            return []; // Return an empty array if no results found
+        }
+    } catch (PDOException $e) {
+        // Log the error and return an appropriate response
+        error_log('Error in chercheridparPrest: ' . $e->getMessage()); // Log the error
+        return []; // Return an empty array if there's an error
+    }
+}
+
 
 ?>
     
