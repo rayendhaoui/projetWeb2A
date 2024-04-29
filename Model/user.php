@@ -7,8 +7,9 @@ class user {
     private $ville;
     private $dernier_service;
     private $date_n;
+    private $mot_d_passe;
     
-    public function __construct( $nom, $prenom, $email, $region, $ville, $dernier_service, $date_n) {
+    public function __construct( $nom, $prenom, $email, $region, $ville, $dernier_service, $date_n,$mot_d_passe) {
 
         $this->nom = $nom;
         $this->prenom = $prenom;
@@ -17,6 +18,7 @@ class user {
         $this->ville = $ville;
         $this->dernier_service= $dernier_service;
         $this->date_n = $date_n;
+        $this->mot_d_passe=$mot_d_passe;
     }
 
     public function getNom() {
@@ -46,6 +48,10 @@ class user {
     public function getDate_n() {
         return $this->date_n;
     }
+    public function getMot_d_passe() {
+        return $this->mot_d_passe;
+    }
+
     public function setNom($nom) {
         $this->nom = $nom;
     }
@@ -72,5 +78,8 @@ class user {
 
     public function setdate_n($date_n) {
         $this->date_n = $date_n;
+    }
+    public function setmot_d_passe($mot_d_passe) {
+        $this->mot_d_passe = $mot_d_passe;
     }
 }

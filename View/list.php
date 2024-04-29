@@ -28,8 +28,9 @@ $list = $userc->listuser(); // Obtenir la liste des CV
             <th style="width: 200px;">email</th>
             <th style="width: 200px;">region</th>
             <th style="width: 300px;">ville</th>
-            <th style="width: 200px;">dernier_service/th>
+            <th style="width: 200px;">dernier_service</th>
             <th style="width: 300px;">date_n</th>
+            <th style="width: 200px;">mot_d_passe </th>
             <th style="width: 100px;">Update</th>
             <th style="width: 100px;">Delete</th>
         </tr>
@@ -44,6 +45,7 @@ $list = $userc->listuser(); // Obtenir la liste des CV
                 <td><?= $user['ville']; ?></td>
                 <td><?= $user['dernier_service']; ?></td>
                 <td><?= $user['date_n']; ?></td>
+                <td><?= $user['mot_d_passe']; ?></td>
                 
                 
                 <td align="center">

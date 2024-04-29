@@ -2,49 +2,40 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link rel="stylesheet" href="globals.css" />
     <link rel="stylesheet" href="style01.css" />
   </head>
   <body>
-    
     <img class="logo-zeb" src="logo-web-1.png">
-           
+
                 <section class="container">
                     <!--<header>inscritez vous</header>-->
-                    <form action="./treatment.php" method="post" onsubmit="" class="form">
+                    <form action="./treatment1.php" method="post" onsubmit="" class="form">
                             <div class="column">
-                              <div class="form-group">                                    <label>Nom</label>
-                                    <input type="text" name="nom" id="nom" placeholder="Enter Votre Nom" required />
-                                </div>
                                 <div class="form-group">
-                                  <label>Prénom</label>
-                                    <input type="text" name="prenom" id="prenom" placeholder="Enter Votre Prenom" required />
+                                    <label>Nom</label>
+                                    <input type="text" name="nom" id="nom" placeholder="Enter Votre Nom" required />
                                 </div>
                             </div>
                             <div class="form-group">
-                              <label>Address émail</label>
+                                <label>Address émail</label>
                                 <input type="text" name="email" id="email" placeholder="Enter email address" required />
                             </div>
                             <div class="column">
-                              <div class="form-group">
-                                <label>region</label>
+                                <div class="input-box">
+                                    <label>region</label>
                                     <input type="text" name="region" id="region" placeholder="Enter ta region " required />
-                                </div>
-                                <div class="form-group">
-                                  <label>Date De Naissance</label>
-                                    <input type="date" name="date_n" id="date_n" placeholder="Enter date de naissance" required />
                                 </div>
                             </div>
                             <div class="form-group">
-                              <div class="column">
+                                <div class="column">
                                     <div class="input-box">
                                         <label>ville</label>
                                         <input type="text" name="ville" id="ville" placeholder="Enter votre ville " required />
                                     </div>
                                     <div class="form-group">
-                                      <label>dernier_service</label>
-                                        <input type="text" name="dernier_service" id="dernier_service" placeholder="Enter votre dernier service" required />
+                                        <label>numero de telephone</label>
+                                        <input type="text" name="num_tel" id="num_tel" placeholder="Enter votre numero de telephone " required />
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -53,17 +44,15 @@
                               </div>
                           </div>
                      
-                            <button type="submit" value="Soumettre user">submit</button>
+                            <button type="submit" value="Soumettre societe">submit</button>
                         </form>
                         <script>
                           function controller() {
                             var nom = document.getElementById("nom").value;
-        var prenom = document.getElementById("prenom").value;
         var email = document.getElementById("email").value;
         var region= document.getElementById("region").value;
         var ville = document.getElementById("ville").value;
-        var dernier_service = document.getElementById("dernier_service").value;
-        var date_n = document.getElementById("date_n").value;
+        var num_tel = document.getElementById("num_tel").value;
         var mot_d_passe = document.getElementById("mot_d_passe").value;
 
 
@@ -105,8 +94,5 @@
           
             
            
-          </div>
-          
-          
   </body>
 </html>

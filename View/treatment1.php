@@ -1,53 +1,47 @@
 <?php
 
-require_once '../Model/user.php'; // Importation de la classe cv
-require_once '../config.php';
-require_once '../Controller/userc.php'; // Importation du contrôleur cvC
+require_once '../Model/societe.php'; // Importation de la classe cv
+require_once '../config1.php';
+require_once '../Controller/societec.php'; // Importation du contrôleur cvC
 
 
 // Vérifier si les données du formulaire sont présentes
 if (
     isset($_POST["nom"]) &&
-    isset($_POST["prenom"]) &&
-    isset($_POST["email"]) &&
     isset($_POST["region"]) &&
     isset($_POST["ville"]) &&
-    isset($_POST["dernier_service"]) &&
-    isset($_POST["date_n"]) &&
+    isset($_POST["num_tel"]) &&
+    isset($_POST["email"]) &&
     isset($_POST["mot_d_passe"])
 
 ) {
     // Vérifier si les champs ne sont pas vides
     if (
         !empty($_POST["nom"]) &&
-        !empty($_POST["prenom"]) &&
-        !empty($_POST["email"]) &&
         !empty($_POST["region"]) &&
         !empty($_POST["ville"]) &&
-        !empty($_POST["dernier_service"]) &&
-        !empty($_POST["date_n"])  &&
+        !empty($_POST["num_tel"]) &&
+        !empty($_POST["email"]) &&
         !empty($_POST["mot_d_passe"])
     ) {
         // Créer une nouvelle instance de la classe cv avec les données du formulaire
-        $user = new user(
+        $societe = new societe(
             $_POST["nom"],
-            $_POST["prenom"],
-            $_POST["email"],
             $_POST["region"],
             $_POST["ville"],
-            $_POST["dernier_service"],
-            $_POST["date_n"],
+            $_POST["num_tel"],
+            $_POST["email"],
             $_POST["mot_d_passe"],
         );
 
-        // Créer une instance du contrôleur userc
-        $userc = new userc;
+        // Créer une instance du contrôleur societec
+        $societec = new societec ;
 
         // Vérifier si le numéro de cv existe déjà
         $nom = $_POST["nom"];
-        if ($userc->chercher_nom_user($nom) === NULL) {
+        if ($societec->chercher_nom_societe($nom) === NULL) {
             // Ajouter le cv si le numéro n'existe pas
-             $userc->adduser($user)
+             $societec->addsociete($societe)
 ?>
                 <!DOCTYPE html>
                 <html lang="en">
@@ -102,7 +96,7 @@ if (
             }
         } else {
             // Si le numéro de cv existe déjà
-            echo '<script>alert("Le nom de user existe déjà"); window.location.href = "user.html";</script>';
+            echo '<script>alert("Le nom de societe existe déjà"); window.location.href = "user.html";</script>';
         }
     } else {
         // Si des champs sont vides

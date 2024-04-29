@@ -7,7 +7,7 @@ class userc // Renommage de la classe UserC en ReclamationC
     public function adduser($user) {
         try {
             $db = config::getConnexion();            
-            $sql = "INSERT INTO user (nom, prenom, email, region, ville, dernier_service, date_n) VALUES (:nom, :prenom, :email, :region, :ville, :dernier_service, :date_n)";
+            $sql = "INSERT INTO user (nom, prenom, email, region, ville, dernier_service, date_n,mot_d_passe) VALUES (:nom, :prenom, :email, :region, :ville, :dernier_service, :date_n , :mot_d_passe)";
             $query = $db->prepare($sql);
             $query->execute([
                 'nom' => $user->getNom(),
@@ -16,7 +16,8 @@ class userc // Renommage de la classe UserC en ReclamationC
                 'region' => $user->getRegion(),
                 'ville' => $user->getVille(),
                 'dernier_service' => $user->getDernier_service(),
-                'date_n' => $user->getDate_n()
+                'date_n' => $user->getDate_n(),
+                'mot_d_passe' => $user->getMot_d_passe()
             ]);
                       
             return true; // Succès de l'insertion
@@ -37,7 +38,8 @@ class userc // Renommage de la classe UserC en ReclamationC
                 region = :region,
                 ville = :ville,
                 dernier_service = :dernier_service,
-                date_n = :date_n
+                date_n = :date_n,
+                mot_d_passe = :mot_d_passe
                 
             WHERE nom = :nom'
         );
@@ -47,8 +49,9 @@ class userc // Renommage de la classe UserC en ReclamationC
             'email' => $user->getEmail(),
             'region' => $user->getRegion(),
             'ville' => $user->getVille(),
-            'dernier_servic' => $user->getDernier_service(),
-            'date_n' => $user->getDate_n()
+            'dernier_service' => $user->getDernier_service(),
+            'date_n' => $user->getDate_n(),
+            'mot_d_passe' => $user->getMot_d_passe()
         ]);
         echo $query->rowCount() . " records UPDATED successfully <br>";
     } catch (PDOException $e) {

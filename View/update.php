@@ -16,7 +16,8 @@ if (
     isset($_POST["region"]) &&
     isset($_POST["ville"]) &&
     isset($_POST["dernier_service"]) &&
-    isset($_POST["date_n"]) 
+    isset($_POST["date_n"])&&
+    isset($_POST["mot_d_passe"]) 
 ) {
     if (
         !empty($_POST["nom"]) &&
@@ -25,7 +26,8 @@ if (
         !empty($_POST["region"]) &&
         !empty($_POST["ville"]) &&
         !empty($_POST["dernier_service"]) &&
-        !empty($_POST["date_n"]) 
+        !empty($_POST["date_n"]) &&
+        !empty($_POST["mot_d_passe"]) 
     ) {
         $user = new user (
         $_POST["nom"],
@@ -34,7 +36,8 @@ if (
         $_POST["region"],
         $_POST["ville"],
         $_POST["dernier_service"],
-        $_POST["date_n"]
+        $_POST["date_n"],
+        $_POST["mot_d_passe"]
         );
         $userc->updateuser($user, $_POST["nom"]);
         header('Location:list.php');
@@ -132,6 +135,14 @@ if (
             </td>
             <td>
             <input type="date" name="date_n" id="date_n" value="<?php echo$user ['date_n']; ?>" maxlength="50">
+            </td>
+        </tr>
+        <tr>
+            <td>
+            <label for="mot_d_passe">mot_d_passe</label>
+            </td>
+            <td>
+            <input type="password" name="mot_d_passe" id="mot_d_passe" value="<?php echo $user['mot_d_passe']; ?>" maxlength="20">
             </td>
         </tr>
         

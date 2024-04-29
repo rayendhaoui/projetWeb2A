@@ -1,0 +1,48 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+}
+
+.container {
+    position: relative;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.logo-zeb {
+    width: 1000px; /* Adjust image width as needed */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10%; /* Rounded corners */
+    border: 2px solid #4CAF50; /* Green border */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Drop shadow */
+    margin-bottom: 20px;
+}
+
+.user-btn,
+.company-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
+    margin: 10px;
+}
+
+.user-btn:hover,
+.company-btn:hover {
+    background-color: #45a049;
+}
+
+.company-btn {
+    margin-left: 20px;
+}
