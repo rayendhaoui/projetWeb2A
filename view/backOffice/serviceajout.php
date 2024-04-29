@@ -11,16 +11,15 @@ if (
     isset($_POST["nom"]) &&
     isset($_POST["prix"]) &&
     isset($_POST["mode"]) &&
-
-   // isset($_POST["niveau"]) &&
+     isset($_POST["id"]) &&
     isset($_POST["typee"]) 
     
 ) {
     if (
         !empty($_POST["nom"]) &&
         !empty($_POST["prix"]) &&
-        //!empty($_POST["niveau"]) &&
         !empty($_POST["typee"]) &&
+        !empty($_POST["id"]) &&
         !empty($_POST["mode"]) 
 
     ) {
@@ -28,8 +27,8 @@ if (
         $service = new service (
             $_POST['nom'],
             $_POST['prix'],
-            //$_POST['niveau'],
             $_POST['typee'],
+            $_POST['id'],
             $_POST['mode']
         );
         $serviceS = new serviceS;
@@ -97,7 +96,7 @@ if (
     <?php endif; ?>
     <div class="sign">
         <div class="sign-up">
-        <img class="logo-web"  src="img/logo-web-1.png" />
+        <!--<img class="logo-web"  src="img/logo-web-1.png" />-->
 
         <div id="dashboard">
         <h1>Dashboard</h1>
@@ -108,7 +107,6 @@ if (
         </ul> 
 </div>
 
-            <div class="overlap">
                 <form action="" method="POST" id="myForm">
                 <table align="center">
             <tr>
@@ -124,7 +122,11 @@ if (
                 <td><input type="text" name="typee" id="typee" value="" maxlength="50"></td>
             </tr>
             <tr>
-                <td><label for="mode">Mode du service</label></td>
+                <td><label for="id">niveau d'esperience</label></td>
+                <td><input type="text" name="id" id="id" value="" maxlength="50"></td>
+            </tr>
+
+            <tr>
                 <td><label for="mode">Mode du service</label></td>
                 <td>
                     <input type="radio" id="mode_en_ligne" name="mode" value="en ligne" >
@@ -149,6 +151,5 @@ if (
                 </form>
             </div>
         </div>
-    </div>
 </body>
 </html>

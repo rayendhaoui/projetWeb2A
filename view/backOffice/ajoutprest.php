@@ -104,7 +104,6 @@ if (
         </ul> 
 </div>
 
-            <div class="overlap">
                 <form action="" method="POST" id="myF" onsubmit="return validateFr()">
                 <table align="center">
             <tr>
@@ -142,6 +141,5 @@ if (
                 </form>
             </div>
         </div>
-    </div>
 </body>
 </html>

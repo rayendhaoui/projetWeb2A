@@ -34,18 +34,67 @@ $result = $conn->query($sql);
     <meta charset="UTF-8">
     <title>Service Dashboard</title>
     <link rel="stylesheet" href="update.css"> <!-- Corrected link to stylesheet -->
+    <style>
+    /* Centrer verticalement et horizontalement avec Flexbox */
+body {
+    display: flex;
+    justify-content: center; /* Centrage horizontal */
+    align-items: center; /* Centrage vertical */
+    height: 100vh; /* La hauteur de la fenêtre */
+    margin: 0; /* Pas de marge */
+    background-color: #f5f5f5; /* Couleur de fond de la page */
+}
+
+#live_search {
+    padding: 10px; /* Espacement interne */
+    font-size: 16px; /* Taille du texte */
+    border: 1px solid #ddd; /* Bordure */
+    border-radius: 5px; /* Bordures arrondies */
+    width: 200px; /* Largeur du champ */
+}
+
+    </style>
 </head>
 
 <body>
+<input type="text" id="live_search" placeholder="Search here...">
+<div class="tt" id="recentOrders"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+            <script type="text/javascript">
+                $(document).ready(function(){
+                    $("#live_search").keyup(function(){
+                        $('#recentOrders').html(''); 
+                        var input =$(this).val();
+                        if(input!=""){
+                            $.ajax({
+                                type: 'GET',
+                                url:"rechercheoff.php",
+                                data: 'input=' + encodeURIComponent(input),
+                                success: function(data){
+                                    if(data!=""){
+                                        $('#recentOrders').append(data); 
+                                    }else{
+                                        document.getElementById('recentOrders').innerHTML = "<div style='font-size:20px'>aucun service</div>"
+                                    }
+                                }
+                                   
+                              
+                            });
+                        }else{
+                            $("#recentOrders").css("display","none");
+                        }
+                    });
+                 });
+            </script>
     <!-- Navigation or Dashboard -->
-    <div id="dashboard">
+   <!-- <div id="dashboard">
         <h1>Dashboard</h1>
         <ul>
             <li><a href="serviceajout.php">Add Service</a></li>
             <li><a href="listeservice.php">List Reclamation</a></li>
             <li><a href="UPDATE.php">Update</a></li>
         </ul> 
-    </div>
+    </div>-->
 
     <hr>
 
@@ -55,6 +104,7 @@ $result = $conn->query($sql);
             <th>Nom du service&nbsp;&nbsp;</th>
             <th>Prix du service&nbsp;&nbsp;</th>
             <th>Type du service&nbsp;&nbsp;</th>
+            <th>Niveau d'experience&nbsp;&nbsp;</th>
             <th>Mode du service&nbsp;&nbsp;</th>
             <th>Modifier&nbsp;&nbsp;</th>
             <th>Supprimer&nbsp;&nbsp;</th>
@@ -66,6 +116,7 @@ $result = $conn->query($sql);
             echo '<td>' . $row['nom'] . '</td>';
             echo '<td>' . $row['prix'] . '</td>';
             echo '<td>' . $row['typee'] . '</td>';
+            echo '<td>' . $row['id'] . '</td>';
             echo '<td>' . $row['mode'] . '</td>';
             
             // Update form button

@@ -2,14 +2,14 @@
 require_once 'config.php';
 include '../../controller/service.php';
 $error = "";
-
-$service = null;
-
 $serviceS = new serviceS();
+
+$res=$serviceS->affich($_GET['nom']);
 if (
   isset($_POST["nom"]) &&
   isset($_POST["prix"]) &&
   isset($_POST["typee"]) &&
+  isset($_POST["id"]) &&
   isset($_POST["mode"]) 
 
 ) {
@@ -17,6 +17,7 @@ if (
       !empty($_POST['nom']) &&
       !empty($_POST['prix']) &&
       !empty($_POST["typee"])&&
+      !empty($_POST["id"])&&
       !empty($_POST["mode"]) 
  
     ) {
@@ -24,6 +25,7 @@ if (
       $_POST['nom'],
       $_POST['prix'],
       $_POST['typee'],
+      $_POST['id'],
       $_POST['mode'] 
       );
       $serviceS->edit($service,$_POST['nom']);
@@ -59,18 +61,22 @@ if (
         <table align="center">
         <tr>
         <td><label  for="nom">Nom</label></td>
-        <td><input  type="text" name="nom" id="nom" value="<?php echo $service['nom']; ?>" id="nom"></td>
+        <td><input  type="text" name="nom" id="nom" value="<?php echo $_GET['nom']; ?>" id="nom"></td>
     </tr>
             <tr>
                 <td><label for="prix">Prix du service</label></td>
-                <td><input type="text" name="prix" id="prix" value="<?php echo $service['prix']; ?>" maxlength="50"></td>
+                <td><input type="text" name="prix" id="prix" value="" maxlength="50"></td>
             </tr>
             <tr>
                 <td><label for="typee">Type du service</label></td>
-                <td><input type="text" name="typee" id="typee" value="<?php echo $service['typee']; ?>" maxlength="50"></td>
+                <td><input type="text" name="typee" id="typee" value="" maxlength="50"></td>
             </tr>
             <tr>
-                <td><label for="mode">Mode du service</label></td>
+                <td><label for="id">niveau d'experience</label></td>
+                <td><input type="text" name="id" id="id" value="" maxlength="50"></td>
+            </tr>
+
+            <tr>
                 <td><label for="mode">Mode du service</label></td>
                 <td>
                     <input type="radio" id="mode_en_ligne" name="mode" value="en ligne" <?php echo (isset($service['mode']) && $service['mode'] === 'en ligne') ? 'checked' : ''; ?>>

@@ -73,7 +73,6 @@ if (
         </ul> 
 </div>
 
-            <div class="overlap">
                 <form action="" method="POST" id="myF">
                 <table align="center">
             <tr>
@@ -113,6 +112,5 @@ if (
                 </form>
             </div>
         </div>
-    </div>
 </body>
 </html>
