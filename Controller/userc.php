@@ -116,6 +116,26 @@ class userc // Renommage de la classe UserC en ReclamationC
             die('Error: ' . $e->getMessage());
         }
     }
+    function connexionUser($email,$mot_d_passe){
+
+        $sql="SELECT * FROM user WHERE email='" . $email . "' and mot_d_passe = '". $mot_d_passe ."'";
+        $db = config::getConnexion();
+        try{
+            $query=$db->prepare($sql);
+            $query->execute();
+            $count=$query->rowCount();
+            if($count==0) {
+                $message = "pseudo ou le mot de passe est incorrect";
+            } else {
+                $x=$query->fetch();
+                $message = $x['role'];
+            }
+        }
+        catch (Exception $e){
+                $message= " ".$e->getMessage();
+        }
+      return $message;
+    }
 }
 
 ?>

@@ -1,0 +1,90 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+}
+
+.container {
+    position: absolute;
+    width: 732px;
+    height: 853px;
+    top: 150px;
+    left: 400px;
+    background-color: #f0ebd8;
+    border-radius: 50px;
+}
+h2 {
+    text-align: center;
+    color: black;
+    
+}
+.form-group {
+    margin-bottom: 10px;
+   
+    left: 100px;
+}
+label {
+    
+    width: 10px;
+    top: 8px;
+    font-family: "Inter", Helvetica;
+    font-weight: 800;
+    color: #595151;;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+
+}
+
+input[type="password"],
+input[type="text"],
+input[type="date"] {
+    position: absolute;
+    width: 200px;
+    height: 50px;
+    top: 500;
+    left: 270px;
+    border-radius: 200px;
+    background-color:  #d9d9d9;
+}
+
+div{
+    
+    color: white;
+    padding: 50px 20px;
+    border: none;
+    border-radius: 200px;
+   
+
+}
+button[type="submit"] {
+    position: absolute;
+    width: 50%;
+    left: 50%; 
+    bottom: 150px; /* Adjust the distance from the bottom of the container */
+    transform: translateX(-50%);
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 200px;
+    cursor: pointer;
+
+
+button:hover {
+    background-color: #45a049;
+    position: center;
+}
+.logo-zeb {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 1000px; /* Adjust image width as needed */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 50%; /* Rounded corners */
+    border: 2px solid #4CAF50; /* Green border */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Drop shadow */
+}
+
+}

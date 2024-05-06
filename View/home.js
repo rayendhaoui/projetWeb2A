@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
         event.preventDefault();
         
         // Redirigez vers signin.html
-        window.location.href = 'user.html';
+        window.location.href = 'signin.html';
     });
 
     const signupButton = document.getElementById('signupButton');

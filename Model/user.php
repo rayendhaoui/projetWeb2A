@@ -1,5 +1,5 @@
 <?php
-class user {
+ class user {
     private $nom;
     private $prenom;
     private $email;
@@ -82,4 +82,25 @@ class user {
     public function setmot_d_passe($mot_d_passe) {
         $this->mot_d_passe = $mot_d_passe;
     }
+    public static function consultUserByEmail($email) {
+        require_once "../config.php";
+        $cnx = config::getConnexion();
+        $stmt = $cnx->prepare("SELECT * FROM user WHERE email = :email");
+        $stmt->bindParam(':email', $email);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+    
+    
+
+    public function updatePassword($email, $mot_d_passe) {
+        require_once "../config.php";
+        $cnx = config::getConnexion();
+        $stmt = $cnx->prepare("UPDATE user SET mot_d_passe = :mot_d_passe WHERE email = :email");
+        $stmt->bindParam(":mot_d_passe", $mot_d_passe);
+        $stmt->bindParam(":email", $email);
+        return $stmt->execute();
+    }
+    
 }
+?>
