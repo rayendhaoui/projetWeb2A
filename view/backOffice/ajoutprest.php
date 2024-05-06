@@ -52,6 +52,8 @@ if (
     <meta charset="utf-8" />
     <link rel="stylesheet" href="globals.css" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
     <title>Ajouter un prestataire</title>
     <script>
         function validateFr() {
@@ -95,14 +97,6 @@ if (
         <div class="sign-up">
         <img class="logo-web"  src="img/logo-web-1.png" />
 
-        <div id="dashboard">
-        <h1>Dashboard</h1>
-        <ul>
-            <li><a href="ajoutprest.php"> Ajouter un prestataire</a></li>
-            <li><a href="listeprest.php"> Liste des prestataires</a></li>
-            <li><a href="updateprest.php">Update</a></li>
-        </ul> 
-</div>
 
                 <form action="" method="POST" id="myF" onsubmit="return validateFr()">
                 <table align="center">

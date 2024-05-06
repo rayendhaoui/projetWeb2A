@@ -34,23 +34,47 @@ $result = $conn->query($sql);
     <meta charset="UTF-8">
     <title>Service Dashboard</title>
     <link rel="stylesheet" href="update.css"> <!-- Corrected link to stylesheet -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
     <style>
-    /* Centrer verticalement et horizontalement avec Flexbox */
-body {
-    display: flex;
-    justify-content: center; /* Centrage horizontal */
-    align-items: center; /* Centrage vertical */
-    height: 100vh; /* La hauteur de la fenêtre */
-    margin: 0; /* Pas de marge */
-    background-color: #f5f5f5; /* Couleur de fond de la page */
+/* Style the input text field */
+#live_search {
+    width: 100%; /* Make it full-width */
+    padding: 10px; /* Add padding */
+    font-size: 16px; /* Set font size */
+    border: 1px solid #ccc; /* Set border */
+    border-radius: 4px; /* Round the corners */
+    outline: none; /* Remove the outline on focus */
+    transition: all 0.2s; /* Smooth transition on hover/focus */
 }
 
-#live_search {
-    padding: 10px; /* Espacement interne */
-    font-size: 16px; /* Taille du texte */
-    border: 1px solid #ddd; /* Bordure */
-    border-radius: 5px; /* Bordures arrondies */
-    width: 200px; /* Largeur du champ */
+/* Change the border color on focus */
+#live_search:focus {
+    border-color: #66afe9; /* Change border color */
+    box-shadow: 0 0 8px rgba(102, 175, 233, 0.6); /* Add a blue glow */
+}
+
+/* Style the results container */
+#recentOrders {
+    border: 1px solid #ddd; /* Add border */
+    border-radius: 4px; /* Round the corners */
+    background-color: #fff; /* Set background color */
+    padding: 10px; /* Add padding */
+    margin-top: 10px; /* Add some space from the input field */
+    max-height: 300px; /* Set a maximum height */
+    overflow-y: auto; /* Enable vertical scrolling if needed */
+}
+
+/* Style the text in the results container */
+#recentOrders div {
+    font-size: 16px; /* Set font size */
+    color: #333; /* Set text color */
+}
+
+/* Add a hover effect for results, if they are clickable */
+#recentOrders div:hover {
+    background-color: #f1f1f1; /* Change background color on hover */
+    cursor: pointer; /* Change cursor on hover */
 }
 
     </style>
@@ -65,7 +89,7 @@ body {
                     $("#live_search").keyup(function(){
                         $('#recentOrders').html(''); 
                         var input =$(this).val();
-                        if(input!=""){
+                        //if(input!=""){
                             $.ajax({
                                 type: 'GET',
                                 url:"rechercheoff.php",
@@ -80,9 +104,9 @@ body {
                                    
                               
                             });
-                        }else{
+                    /*    }else{
                             $("#recentOrders").css("display","none");
-                        }
+                        }*/
                     });
                  });
             </script>
@@ -136,6 +160,18 @@ body {
         }
         ?>
     </table>
+    <div class="container text-center" style="margin-top: 80px;">
+        <a class="btn btn-info btn-lg" href="serviceajout.php">
+            <span class="glyphicon glyphicon-remove"></span> Ajouter un service
+        </a>
+    </div>
+
+    <div class="container text-center" style="margin-top: 50px;">
+        <a class="btn btn-info btn-lg" href="statistique.php">
+            <span class="glyphicon glyphicon-remove"></span> STATISTIQUE
+        </a>
+    </div>
+
 
     <!-- Pagination -->
     <?php

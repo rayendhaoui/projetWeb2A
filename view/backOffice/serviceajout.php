@@ -46,11 +46,26 @@ if (
 <!DOCTYPE html>
 <html>
 <head>
+    <style>
+        h1 {
+    font-size: 2.5em;       /* Controls the size of the font */
+    font-weight: bold;      /* Makes the text bold */
+    color: #333;            /* Sets a dark gray color */
+    text-align: center;     /* Centers the text horizontally */
+    margin-bottom: 20px;    /* Space below the heading */
+    letter-spacing: 1px;    /* Slightly increases the spacing between characters */
+    font-family: 'Arial', sans-serif;  /* Uses a common sans-serif font */
+}
+
+    </style>
 <link rel="stylesheet" href="update.css">
 
     <meta charset="utf-8" />
     <link rel="stylesheet" href="globals.css" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="offred'emploi.css" />
+    <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <title>Ajouter un service</title>
     <script>
         function validateForm() {
@@ -89,23 +104,19 @@ if (
             document.getElementById('myForm').submit(); // Si toutes les validations réussissent
         }
     </script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
 </head>
 <body>
+    <h1>Ajouter Un Service</h1>
     <?php if (!empty($error)): ?>
         <div class="error"><?php echo $error; ?></div>
     <?php endif; ?>
+
     <div class="sign">
         <div class="sign-up">
         <!--<img class="logo-web"  src="img/logo-web-1.png" />-->
 
-        <div id="dashboard">
-        <h1>Dashboard</h1>
-        <ul>
-            <li><a href="serviceajout.php"> Add service</a></li>
-            <li><a href="listeservice.php"> List reclamation</a></li>
-            <li><a href="UPDATE.php">Update</a></li>
-        </ul> 
-</div>
 
                 <form action="" method="POST" id="myForm">
                 <table align="center">
@@ -151,5 +162,6 @@ if (
                 </form>
             </div>
         </div>
+    </div>
 </body>
 </html>

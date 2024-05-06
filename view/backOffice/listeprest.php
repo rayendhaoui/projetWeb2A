@@ -34,18 +34,85 @@ $result = $conn->query($sql);
     <meta charset="UTF-8">
     <title>Service Dashboard</title>
     <link rel="stylesheet" href="update.css"> <!-- Corrected link to stylesheet -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <style>
+        /* Style the input text field */
+#live_search {
+    width: 100%; /* Make it full-width */
+    padding: 10px; /* Add padding */
+    font-size: 16px; /* Set font size */
+    border: 1px solid #ccc; /* Set border */
+    border-radius: 4px; /* Round the corners */
+    outline: none; /* Remove the outline on focus */
+    transition: all 0.2s; /* Smooth transition on hover/focus */
+}
+
+/* Change the border color on focus */
+#live_search:focus {
+    border-color: #66afe9; /* Change border color */
+    box-shadow: 0 0 8px rgba(102, 175, 233, 0.6); /* Add a blue glow */
+}
+
+/* Style the results container */
+#recentOrders {
+    border: 1px solid #ddd; /* Add border */
+    border-radius: 4px; /* Round the corners */
+    background-color: #fff; /* Set background color */
+    padding: 10px; /* Add padding */
+    margin-top: 10px; /* Add some space from the input field */
+    max-height: 300px; /* Set a maximum height */
+    overflow-y: auto; /* Enable vertical scrolling if needed */
+}
+
+/* Style the text in the results container */
+#recentOrders div {
+    font-size: 16px; /* Set font size */
+    color: #333; /* Set text color */
+}
+
+/* Add a hover effect for results, if they are clickable */
+#recentOrders div:hover {
+    background-color: #f1f1f1; /* Change background color on hover */
+    cursor: pointer; /* Change cursor on hover */
+}
+
+    </style>
 </head>
 
 <body>
+<input type="text" id="live_search" placeholder="Search here...">
+<div class="tt" id="recentOrders"></div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+            <script type="text/javascript">
+                $(document).ready(function(){
+                    $("#live_search").keyup(function(){
+                        $('#recentOrders').html(''); 
+                        var input =$(this).val();
+                        //if(input!=""){
+                            $.ajax({
+                                type: 'GET',
+                                url:"rech.php",
+                                data: 'input=' + encodeURIComponent(input),
+                                success: function(data){
+                                    if(data!=""){
+                                        $('#recentOrders').append(data); 
+                                    }else{
+                                        document.getElementById('recentOrders').innerHTML = "<div style='font-size:20px'>aucun prestataire</div>"
+                                    }
+                                }
+                                   
+                              
+                            });
+                    /*    }else{
+                            $("#recentOrders").css("display","none");
+                        }*/
+                    });
+                 });
+            </script>
+
     <!-- Navigation or Dashboard -->
-    <div id="dashboard">
-        <h1>Dashboard</h1>
-        <ul>
-        <li><a href="ajoutprest.php"> Ajouter un prestataire</a></li>
-            <li><a href="listeprest.php"> Liste des prestataires</a></li>
-            <li><a href="updateprest.php">Update</a></li>
-        </ul> 
-    </div>
 
     <hr>
 
@@ -90,6 +157,12 @@ $result = $conn->query($sql);
         }
         ?>
     </table>
+    <div class="container text-center" style="margin-top: 50px;">
+        <a class="btn btn-info btn-lg" href="ajoutprest.php">
+            <span class="glyphicon glyphicon-remove"></span> Ajouter Un Prestataire
+        </a>
+    </div>
+
 
     <!-- Pagination -->
     <?php

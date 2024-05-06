@@ -4,7 +4,6 @@ include '../../controller/service.php';
 $error = "";
 $serviceS = new serviceS();
 
-$res=$serviceS->affich($_GET['nom']);
 if (
   isset($_POST["nom"]) &&
   isset($_POST["prix"]) &&
@@ -39,13 +38,15 @@ if (
 <head>
     <meta charset="UTF-8">
     <title>Update Service</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
     <link rel="stylesheet" href="update.css">
 </head>
 <body>
     <div id="dashboard">
         <h1>Dashboard</h1>
         <ul>
-            <li><a href="serviceajou.php">Ajouter un service</a></li>
+            <li><a href="serviceajout.php">Ajouter un service</a></li>
             <li><a href="listeservice.php">Liste des services</a></li>
             <li><a href="UPDATE.php">Update</a></li>
         </ul>
@@ -61,7 +62,7 @@ if (
         <table align="center">
         <tr>
         <td><label  for="nom">Nom</label></td>
-        <td><input  type="text" name="nom" id="nom" value="<?php echo $_GET['nom']; ?>" id="nom"></td>
+        <td><input  type="text" name="nom" id="nom" value="" id="nom"></td>
     </tr>
             <tr>
                 <td><label for="prix">Prix du service</label></td>
