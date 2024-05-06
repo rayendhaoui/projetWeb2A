@@ -67,6 +67,23 @@ class serviceS
         
     }
 
+    function countt() {
+        $sql = "SELECT COUNT(*) as count FROM service"; // Fixed the syntax error
+        $db = config::getConnexion(); // Assuming you have a function to get DB connection
+        try {
+            $result = $db->query($sql); // Query execution
+            if ($result) {
+                $row = $result->fetch(); // Fetch the result as an associative array
+                return $row['count']; // Return the count from the 'count' column
+            } else {
+                throw new Exception("Query failed");
+            }
+        } catch (Exception $e) {
+            die('Error: ' . $e->getMessage()); // Handle any exceptions
+        }
+    }
+            
+
 
     function edit($service) {
         try {

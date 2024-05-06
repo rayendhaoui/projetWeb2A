@@ -1,8 +1,6 @@
 <?php
 require_once 'config.php';
-require_once '../model/feedback.PHP';
-
-
+require_once '../../model/feedback.PHP';
 class feedC
 {
 
