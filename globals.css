@@ -1,0 +1,111 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+@import url("https://fonts.googleapis.com/css?family=Inter:900,800,600,500,400,700");
+@import url("https://fonts.googleapis.com/css?family=Inter:400,800");
+* {
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+
+button:focus-visible {
+  outline: 2px solid #4a90e2 !important;
+  outline: -webkit-focus-ring-color auto 5px !important;
+}
+
+a {    position: relative;
+  padding: 5px 10px;
+  color: var(--white);
+  border-radius: 6px;
+}
+
+#header {
+  padding: 1em;
+  background-color: black;
+  text-align: center;
+  color: #fff;
+  width: 100%;
+  position: relative;
+}
+
+#header a {
+  float: left;
+  color: #fff;
+  text-decoration: none;
+  width: 30%;
+}
+
+#header a:hover {
+  color: #fcab15;
+}
+
+#header div:first-of-type {
+  float: right;
+  width: 40%;
+}
+
+#header div:last-of-type {
+  display: inline-block;
+  width: 30%;
+}
+
+#header div:last-of-type span {
+  margin-left: 0.5em;
+  color: #fcab15;
+}
+
+#form-container {
+  padding: 1em;
+  background-color: #065671;
+  text-align: center;
+  width: 100%;
+  position: relative;
+}
+
+#form-container img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: auto;
+}
+
+#form-container form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+}
+
+#form-container input[type="text"],
+#form-container input[type="email"] {
+  width: 100%;
+  padding: 0.5em;
+  margin-bottom: 1em;
+  border: none;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+#form-container input[type="submit"] {
+  width: 100%;
+  padding: 0.5em;
+  background-color: #fcab15;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#form-container input[type="submit"]:hover {
+  background-color: #fff;
+  color: #fcab15;
+  border: 1px solid #fcab15;
+}
