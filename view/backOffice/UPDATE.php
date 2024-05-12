@@ -43,14 +43,6 @@ if (
     <link rel="stylesheet" href="update.css">
 </head>
 <body>
-    <div id="dashboard">
-        <h1>Dashboard</h1>
-        <ul>
-            <li><a href="serviceajout.php">Ajouter un service</a></li>
-            <li><a href="listeservice.php">Liste des services</a></li>
-            <li><a href="UPDATE.php">Update</a></li>
-        </ul>
-    </div>
 
     <hr>
 
