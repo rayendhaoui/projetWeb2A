@@ -55,8 +55,92 @@
             background-color: #222;
             color: #e6e6e6;
         }
+        .container {
+    position: absolute;
+    width: 732px;
+    height: 350px;
+    top: 125px;
+    left: 400px;
+    background-color: #f0ebd8;
+    border-radius: 50px;
+}
+.form-control {
+    width: 100%;  /* Make input fields fill the available space within cells */
+  }
+  /* Form Container */
+.form-container {
+    background-color: #fff; /* Set background color for the form */
+    padding: 3rem; /* Add some padding for spacing */
+    border-radius: 5px; /* Add some rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a light shadow */
+  }
+  
+  /* Form Groups */
+  .form-group {
+    margin-bottom: 1rem; /* Add some space between form groups */
+  }
+  
+  /* Labels and Input */
+  label {
+    font-weight: bold;
+    display: block;  /* Make labels display on separate lines */
+    margin-bottom: 5px; /* Add some space between label and input */
+  }
+  
+  .form-control {
+    width: 100%;  /* Make input fields fill the available space */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  /* Buttons */
+  .btn {
+    margin-top: 1rem;  /* Add some space between buttons */
+  }
+  .btn {
+    margin: 0.5rem 1rem; /* Adjust margins for spacing between buttons */
+    padding: 10px 20px; /* Adjust padding for button size */
+    border-radius: 5px; /* Add rounded corners */
+    font-size: 16px; /* Adjust font size for button text */
+    cursor: pointer; /* Indicate interactivity on hover */
+  }
+  
+  .btn-primary {
+    background-color: #4CAF50; /* Blue color for primary button */
+    color: #fff; /* White text for primary button */
+     /* Blue border for primary button */
+  }
+  
+  .btn-primary:hover {
+    background-color: #6c757d; /* Gray color for secondary button */
+    color: #fff; /* White text for secondary button */
+   
+  }
+  
+  .btn-secondary {
+    background-color: #6c757d; /* Gray color for secondary button */
+    color: #fff; /* White text for secondary button */
+   
+  }
+  
+  .btn-secondary:hover {
+    background-color: #5a6268; /* Darker gray on hover for secondary button */
+    border-color: #5a6268; /* Darker gray border on hover for secondary button */
+  }
+  .logo-zeb {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 1000px; /* Adjust image width as needed */
+    height: auto; /* Maintain aspect ratio */
+   
+    
+}
     </style>
     </head>
+    <img class="logo-zeb" src="logo-web-1.png">
+
 
 <body> 
         
@@ -69,12 +153,12 @@
         <!-- Load font awesome icons -->
 
 <!-- The social media icon bar -->
-                    <a class="navbar-brand smoothie" href="addU.php"> <span class="theme-accent-color">COUP</span> DE <span class="theme-accent-color">CHEF</span></a>
+                    <a class="navbar-brand smoothie" href="user.php"> <span class="theme-accent-color">COUP</span> DE <span class="theme-accent-color">CHEF</span></a>
 
  <header id="header" class="fixed-top">
     <header id="header" class="fixed-top">
       <div class="container d-flex align-items-center">
-        <h1 class=""><a href="../addU.php">coup de chef</h1>
+        <h1 class=""><a href="../user.php">coup de chef</h1>
       <nav class="nav-menu d-none d-lg-block">
         <ul>
           <li class="active"><a href="../home.php">Home</a></li>
@@ -139,24 +223,7 @@
                 </div>                         
             </div>
         </div>
-   <div class="mode">
-        Dark mode:             
-        <span class="change">OFF</span>
-    </div>
-      
   
-      
-    <script>
-        $( ".change" ).on("click", function() {
-            if( $( "body" ).hasClass( "dark" )) {
-                $( "body" ).removeClass( "dark" );
-                $( ".change" ).text( "OFF" );
-            } else {
-                $( "body" ).addClass( "dark" );
-                $( ".change" ).text( "ON" );
-            }
-        });
-    </script>
 
             
     

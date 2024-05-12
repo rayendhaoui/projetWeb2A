@@ -26,6 +26,7 @@ body {
 }
 
 .user-btn,
+.admin_btn,
 .company-btn {
     padding: 10px 20px;
     border: none;
@@ -39,6 +40,7 @@ body {
 }
 
 .user-btn:hover,
+.admin-btn:hover,
 .company-btn:hover {
     background-color: #45a049;
 }
@@ -46,3 +48,7 @@ body {
 .company-btn {
     margin-left: 20px;
 }
+.admin-btn {
+    margin-left: 50px;
+}
+

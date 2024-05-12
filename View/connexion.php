@@ -26,10 +26,13 @@ if (isset($_POST["email"]) &&
 
   <head>
        <meta charset="utf-8">
-       
+
+       <link rel="stylesheet" href="connexion.css" />
+
     </head>
 
     
+    <img class="logo-zeb" src="logo-web-1.png">
 
 <body> 
         
@@ -59,71 +62,35 @@ if (isset($_POST["email"]) &&
                                 </div>
                                 
                                 <div class="card-body">
-                                    <form action="" method="POST">
-                                        <table  align="center">
-                                            <tr>
-                                                <td>
-                                                    <label class="small mb-1" for="email" >email:</label>
-                                                </td>
-                                                <td>
-                                                    <input class="form-control" type="text" name="email" id="email" placeholder="Entrer l'email">
-                                                </td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>
-                                                    <label class="small mb-1" for="mot_d_passe"  >Mot de passe:</label>
-                                                </td>
-                                                <td>
-                                                    <input class="form-control" type="mot_d_passe" name="mot_d_passe" id="mot_d_passe" placeholder="Entrer le mot de passe">
-                                                </td>
-                                            </tr>
-                                </div>
-                                            <tr>
-                                                <td></td>
-                                                <td>
-                                                    <input class="btn btn-primary btn-block" type="submit" value="Envoyer"> 
-                                                </td>
-                                            </tr>
-                                            
-                                            <tr>
-                                                <td></td>
-                                                <td>
-                                                    <input class="btn btn-primary btn-block" type="reset" value="Annuler" >
-                                                </td>
-                                            </tr>
-                    
-
-                                        </table>
-                                    </form>
-                                    <div> <a href="user.html">j'ai pas de compte  </a> </div>
-                                    
-                                    <div> <a href="mpoublie.php">Mot De Passe oublié ? </a> </div>
-                            </div>
+                                <form action="" method="POST">
+  <div class="form-container">
+    <div class="form-group">
+      <label class="small mb-1" for="email">Email:</label>
+      <input class="form-control" type="email" name="email" id="email" placeholder="Entrer l'email">
+    </div>
+    <div class="form-group">
+      <label class="small mb-1" for="mot_d_passe">Mot de passe:</label>
+      <input class="form-control" type="password" name="mot_d_passe" id="mot_d_passe" placeholder="Entrer le mot de passe">
+    </div>
+    <div class="form-group">
+  
+  <button class="btn btn-secondary btn-block" type="reset">Annuler</button>
+  <button class="btn btn-primary btn-block" type="submit">Envoyer</button>
+</div>
+  </div>
+</form>
+                                    <div class="button-container">
+  <button onclick="location.href='user.php'">j'ai pas de compte</button>
+</div>
+<div class="button-container">
+  <button onclick="location.href='mpoublie.php'">Mot De Passe oublié ?</button>
+</div>
                         </div>
                     </div>
                 </div>                         
             </div>
         </div>
 
-  <div class="mode">
-        Dark mode:             
-        <span class="change">OFF</span>
-    </div>
-      
-  
-      
-    <script>
-        $( ".change" ).on("click", function() {
-            if( $( "body" ).hasClass( "dark" )) {
-                $( "body" ).removeClass( "dark" );
-                $( ".change" ).text( "OFF" );
-            } else {
-                $( "body" ).addClass( "dark" );
-                $( ".change" ).text( "ON" );
-            }
-        });
-    </script>
 
             
   

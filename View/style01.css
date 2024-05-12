@@ -39,7 +39,7 @@ label {
 
 input[type="password"],
 input[type="text"],
-input[type="date"] {
+ {
     position: absolute;
     width: 200px;
     height: 20px;
