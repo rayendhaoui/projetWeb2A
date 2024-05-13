@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="globals.css" />
+    <link rel="stylesheet" href="styleajou.css" />
+    <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
+    <script>
+        function validateForm() {
+            var photo = document.getElementById("photo");
+            var titre_off = document.getElementById("titre_off");
+            var nom_ent = document.getElementById("nom_ent");
+            var lieu_ent = document.getElementById("lieu_ent");
+            var nbr_emp = document.getElementById("nbr_emp");
+            var type_off = document.getElementById("type_off");
+            var mode_trav = document.getElementById("mode_trav");
+            var nom_rec = document.getElementById("nom_rec");
+            var date_rec = document.getElementById("date_rec");
+            var descrip = document.getElementById("descrip");
+    
+            if (photo.value == "") {
+                alert("Please select a photo.");
+                return false;
+            }
+            if (titre_off.value == "") {
+                alert("Please enter the title of the offer.");
+                return false;
+            }
+            if (nom_ent.value == "") {
+                alert("Please enter the name of the company.");
+                return false;
+            }
+            if (lieu_ent.value == "") {
+                alert("Please enter the location of the company.");
+                return false;
+            }
+            if (nbr_emp.value == "") {
+                alert("Please enter the number of employees.");
+                return false;
+            }
+            if (type_off.value == "") {
+                alert("Please enter the type of offer.");
+                return false;
+            }
+            if (mode_trav.value == "") {
+                alert("Please enter the mode of travel.");
+                return false;
+            }
+            if (nom_rec.value == "") {
+                alert("Please enter the name of the recruiter.");
+                return false;
+            }
+            if (date_rec.value == "") {
+                alert("Please enter the date of recruitment.");
+                return false;
+            }
+            if (descrip.value == "") {
+                alert("Please enter a description.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+  </head>
+  <body>
+        <div class="sidebar">
+            <div class="logo-details">
+                <img class="logo-clinets" src="img/logo-clinets-1.png" />
+                <i class='bx bx-menu' id="btn"></i>
+            </div>
+            <ul class="nav-list">
+                <li>
+                <i class='bx bx-search'></i>
+                <input type="text" placeholder="Search...">
+                <span class="tooltip">Search</span>
+                </li>
+                <li>
+                <a href="#">
+                    <i class="acc">
+                    <img class="home-2" src="img/home-1.png" />
+                    </i>
+                    <span class="links_name">Accueil</span>
+                </a>
+                <span class="tooltip">Accueil</span>
+                </li>
+                <li>
+                <a href="#">
+                    <i class='off'>
+                    <img class="icon-briefcase" src="img/icon-briefcase.png" />
+                    </i>
+                    <span class="links_name">Offres d’emploi</span>
+                </a>
+                <span class="tooltip">Offres d’emploi</span>
+                </li>
+                <li>
+                <a href="#">
+                    <i class='service'>
+                    <img class="img-2" src="img/service-1.png" />
+                    </i>
+                    <span class="links_name">service</span>
+                </a>
+                <span class="tooltip">service</span>
+                </li>
+                <li>
+                <a href="#">
+                    <i class='cccc'>
+                    <img class="cv" src="img/cv-3.png" />
+                    </i>
+                    <span class="links_name">Cv</span>
+                </a>
+                <span class="tooltip">Cv</span>
+                </li>
+                <li>
+                <a href="#">
+                    <i class='bx bx-chat'></i>
+                    <span class="links_name">Messages</span>
+                </a>
+                <span class="tooltip">Messages</span>
+                </li>
+                
+                <li>
+                <a href="#">
+                    <i class='bx bx-heart'></i>
+                    <span class="links_name">Saved</span>
+                </a>
+                <span class="tooltip">Saved</span>
+                </li>
+                <li>
+                <a href="#">
+                    <i class='bx bx-user'></i>
+                    <span class="links_name">User</span>
+                </a>
+                <span class="tooltip">User</span>
+                </li>
+                <li>
+                <a href="#">
+                    <i class='bx bx-cog'></i>
+                    <span class="links_name">Setting</span>
+                </a>
+                <span class="tooltip">Setting</span>
+                </li>
+                <li class="profile">
+                <div class="profile-details">
+                    <img class="user" src="img/user-1-1.png"  alt="profileImg">
+                    <div class="name_job">
+                    <div class="name">rayen dhaoui</div>
+                    <div class="job">Web designer</div>
+                    </div>
+                </div>
+                <a href="#">
+                    <i class='bx bx-log-out' id="log_out"></i>
+                </a>
+                <span class="tooltip">log_out</span>
+                </li>
+            </ul>
+        </div>
+    
+        <section class="offre-d-emploi">   
+            <div class="topbar">
+                <div class="toggle">
+                    <h> offre d'emploi</h>
+                </div>
+
+                <div class="user">
+                    <img src="assets/imgs/customer01.jpg" alt="">
+                </div>
+            </div>
+
+            <!-- ================ Order Details List ================= -->
+            <div class="details">
+                <div class="recentOrders">
+                    <table>
+                        <tbody>
+                            <div class="cardHeader">
+                                <h2 align="center">ajouter un offre d'emploi</h2>
+                               <!-- <a href="#" class="btn">View All</a> -->
+                            </div>
+                            <div class="container">
+                                <form action="./ajoutoffre.php" method="post" onsubmit="return validateForm()" enctype="multipart/form-data">
+                                    <label for="photo">Photo:</label><br>
+                                    <input type="file" id="photo" name="photo"><br>
+                                    <label for="titre_off">Titre Offre:</label><br>
+                                    <input type="text" id="titre_off" name="titre_off"><br>
+                                    <label for="nom_ent">Nom Entreprise:</label><br>
+                                    <input type="text" id="nom_ent" name="nom_ent"><br>
+                                    <label for="lieu_ent">Lieu Entreprise:</label><br>
+                                    <input type="text" id="lieu_ent" name="lieu_ent"><br>
+                                    <label for="nbr_emp">Nombre Employees:</label><br>
+                                    <input type="number" id="nbr_emp" name="nbr_emp"><br>
+                                    <label for="type_off">Type Offre:</label><br>
+                                    <input type="text" id="type_off" name="type_off"><br>
+                                    <label for="mode_trav">Mode de Travail:</label><br>
+                                    <input type="text" id="mode_trav" name="mode_trav"><br>
+                                    <label for="nom_rec">Nom du Recruteur:</label><br>
+                                    <input type="text" id="nom_rec" name="nom_rec"><br>
+                                    <label for="date_rec">Date de Recrutement:</label><br>
+                                    <input type="date" id="date_rec" name="date_rec"><br>
+                                    <label for="descrip">Description:</label><br>
+                                    <textarea id="descrip" name="descrip"></textarea><br>
+                                    <input type="submit" value="Submit">
+                                </form>
+                                
+                               
+                            </div>    
+                        </tbody>
+                    </table>  
+                </div>
+            </div>
+    </section>
+    <script  src="offred'emploi.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

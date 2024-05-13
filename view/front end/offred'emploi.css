@@ -1,0 +1,34 @@
+.scrollable-list {
+    position: absolute;
+    width: 554px;
+    height: 800px; /* Set the height of the container */
+    overflow-y: auto; 
+    top: 50px;
+    left: 1%;
+    background-color: #ffffff;
+    border: 1px solid;
+    border-color: #ffffff;
+  }
+  .scrollable-list ul {
+    padding: 0; /* Remove the default padding from the ul element */
+    margin: 0; /* Remove the default margin from the ul element */
+    list-style-type: none; /* Remove the default list style */
+    border: 1px solid;
+    border-color: #000000;
+  }
+  .scrollable-list li {
+    padding: 5px 10px; /* Add some padding to the list items */
+    border-bottom: 1px solid #eee; /* Add a bottom border for visual separation */
+  }
+  .scrollable-list li:hover {
+    background-color: rgb(152, 152, 149);
+  }
+  
+  .scrollable-list li:last-child {
+    border-bottom: none; /* Remove the bottom border from the last list item */
+  }
+  .hidden {
+    display: none;
+  }
+ 
+  

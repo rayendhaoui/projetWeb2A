@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire de demande entretient</title>
+    <link rel="stylesheet" href="demande.css"> <!-- Assurez-vous de remplacer "reponse.css" par le nom de votre fichier CSS -->   
+</head>
+<body>
+  
+    <div class="container">
+        <h2>demande de condidature</h2>
+        <form action="./demande.php" method="post" onsubmit="return validateResponse()">
+            <label for="email">email :</label>
+            <input type="text" id="email" name="email" placeholder="Entrez l'email " >
+            <label for="message">Message :</label>
+            <textarea id="message" name="message" placeholder="Entrez votre réponse"  style="height: 150px;"></textarea>        
+            <input type="submit" value="Soumettre la demande ">
+        </form>
+        
+        <script>
+            function validateResponse() {
+                var message = document.getElementById("message").value;
+                if (message === "") {
+                    alert("Veuillez entrer un message.");
+                    return false; 
+                }
+                return true; 
+            }
+        </script>
+    </div>
+</body>
+</html>
